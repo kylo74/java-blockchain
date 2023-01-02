@@ -1,7 +1,6 @@
-import java.util.Date;
 import java.security.MessageDigest;
 
-public class stringUtil {
+public class StringUtil {
     //Applies sha256 to a string and returns the result
     public static  String applySha256(String input){
         try {
@@ -20,20 +19,5 @@ public class stringUtil {
         catch (Exception e){
             throw new RuntimeException(e);
         }
-    }
-}
-
-public class Block {
-
-    public String hash;
-    public String previousHash;
-    private String data; //The data will be a simple message
-    private long timeStamp; //number of milliseconds since 1/1/1970
-
-    //This creates blocks
-    public Block(String data, String previousHash){
-        this.data = data;
-        this.previousHash = previousHash;
-        this.timeStamp = new Date().getTime();
     }
 }
